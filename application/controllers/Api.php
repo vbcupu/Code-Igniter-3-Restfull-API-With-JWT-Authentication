@@ -13,7 +13,7 @@ use \Firebase\JWT\ExpiredException;
 
 class Api extends RestController {
 	function configToken(){
-		$cnf['exp'] = 3600; //milisecond
+		$cnf['exp'] = 3600; //detik
 		$cnf['secretkey'] = '2212336221';
 		return $cnf;		
 	}
