@@ -24,18 +24,16 @@ class Api extends RestController {
         parent::__construct();        
     }
 
-	public function getToken_get(){				
+	public function getToken_post(){				
             $token = array(
-                "iss" => 'pengguna1',
+                "iss" => 'apprestservice',
                 "aud" => 'pengguna',
                 "iat" => time(),
                 "nbf" => time() + 10,
                 "exp" => time() + 3600,
                 "data" => array(
-                    "id" =>'testtoken',
-                    "firstname" => 'nama',
-                    "lastname" => 'lastname',
-                    "email" => 'emailnya'
+                    "username" => $this->input->post('username'),
+                    "password" => $this->input->post('password')
                 )
             );       
 		
